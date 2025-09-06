@@ -23,6 +23,7 @@ async function getWeather() {
     document.getElementById("weatherInfo").innerHTML = `
       <h4>${weatherData.name}, ${weatherData.sys.country}</h4>
       <p>🌡 Temp: ${weatherData.main.temp}°C</p>
+      <p>💧 Humidity: ${weatherData.main.humidity}%</p>
       <p>☁️ ${weatherData.weather[0].description}</p>
     `;
     document.getElementById("icon").innerHTML =
@@ -52,6 +53,7 @@ async function getWeather() {
           <p><b>${new Date(dayData.dt_txt).toLocaleDateString("en-US", { weekday: 'short' })}</b></p>
           <img src="https://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png">
           <p>${Math.round(dayData.main.temp)}°C</p>
+          <p>💧 ${dayData.main.humidity}%</p>
           <p>${dayData.weather[0].description}</p>
         </div>
       `;
